@@ -14,6 +14,7 @@ module "vpc" {
   default_vpc_cidr     = var.vpc["default_vpc_cidr"]
 }
 
+# APP Module
 module "apps" {
   depends_on = [module.db, module.vpc]
   source = "./modules/asg"
